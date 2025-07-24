@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.array;
 
 import java.util.Comparator;
 import java.util.HashMap;
