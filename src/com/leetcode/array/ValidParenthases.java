@@ -26,9 +26,9 @@ public class ValidParenthases {
     */
 
     public static void main(String[] args) {
-        String str = "()[{}]";
-        System.out.println(isValidParentheses(str) ? "Valid " : "Not Valid");
-        System.out.println(isValid(str) ? "Valid " : "Not Valid");
+        String str = "()[{}]{}{}[]";
+       // System.out.println(isValidParentheses(str) ? "Valid " : "Not Valid");
+        System.out.println(checkParamthysisIsValid(str) ? "Valid " : "Not Valid");
 
     }
     private static boolean isValidParentheses(String str){
@@ -59,5 +59,35 @@ public class ValidParenthases {
         }
         return stack.isEmpty();
     }
+
+
+
+
+private static boolean checkParamthysisIsValid(String str){
+        Stack<Character> stack = new Stack<>();
+        for(int i = 0 ; i< str.length(); i++){
+            if(!stack.isEmpty() && str.charAt(i) == stack.peek()){
+                stack.pop();
+            }
+            else{
+                stack.push(getPair(str.charAt(i)));
+            }
+        }
+        return stack.isEmpty();
+}
+
+    private static char getPair(char ch){
+        if(ch =='('){
+            return ')';
+        }
+        else if(ch == '{'){
+            return '}';
+        }else if(ch == '['){
+            return ']';
+        }
+        return 0;
+    }
+
+
 
 }
