@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class LuckyInteger {
+
     public static void main(String[] args) {
         int[] arr = {19,12,5,11,14,5,18,8,6,6,13,9,8,3,10,10,1,5,10,5,12,13,5,13,9};
         System.out.println("Lucky Number : " + findLucky(arr));
